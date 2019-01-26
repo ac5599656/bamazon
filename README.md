@@ -1,7 +1,5 @@
 # bamazon
 
-# Word-Guess-Cli
-
 # Summary
 
 Bamazon is a purchase app.
@@ -21,7 +19,7 @@ Screenshots are provided below for the Word-Guess-Cli.
 
 ![](assets/images/screenshot3.png)
 
-## More Info On Word-Guess-Cli
+## More Info On Bamazon
 
 This app is updated and maintaned by the Github user ac5599656. If you have further questions, you can email
 ac5599656@gmail.com
