@@ -15,10 +15,6 @@ Screenshots are provided below for the Word-Guess-Cli.
 
 ![](assets/images/screenshot1.png)
 
-![](assets/images/screenshot2.png)
-
-![](assets/images/screenshot3.png)
-
 ## More Info On Bamazon
 
 This app is updated and maintaned by the Github user ac5599656. If you have further questions, you can email

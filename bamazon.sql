@@ -18,7 +18,7 @@ INSERT INTO products (product_name, department_name, price, stock_quanity)
 VALUES ("socks", "clothes", 5, 100);
 
 INSERT INTO products (product_name, department_name, price, stock_quanity)
-VALUES ("Pride and Prejuidie", "book", 35, 10);
+VALUES ("Pride and Prejuidice", "book", 35, 10);
 
 INSERT INTO products (product_name, department_name, price, stock_quanity)
 VALUES ("pencil", "stationary", 35, 100);
