@@ -20,7 +20,7 @@ Managers choose from a list a set of menu options:
 
 To get started with the Bamazon app, go to bamazon.js. Get into the terminal for Bamazon.js. Then type the command node Bamazon.js. The app will start.
 
-To get started with the bamazonManager app, go to bamazon.js. Get into the terminal for Bamazon.js. Then type the command node Bamazon.js. The app will start.
+To get started with the bamazonManager app, go to bamazonManager.js. Get into the terminal for Bamazon.js. Then type the command node Bamazon.js. The app will start.
 
 ## Screenshots
 
