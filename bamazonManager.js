@@ -54,7 +54,7 @@ function start() {
 }
 
 function viewSaleProduct() {
-    //   * If a manager selects `View Products for Sale`, the app should list every available item: the item IDs, names, prices, and quantities.
+    //   * If a manager selects `View Products for Sale`, the viewSaleProduct function lists every available item: the item IDs, names, prices, and quantities.
     connection.query("SELECT * FROM products", function (err, results) {
         if (err) throw err;
         console.table(results);
@@ -63,7 +63,7 @@ function viewSaleProduct() {
 }
 
 function viewLowInventory() {
-    //   * If a manager selects `View Low Inventory`, then it should list all items with an inventory count lower than five.
+    //   * If a manager selects `View Low Inventory`, the viewLowInventory function lists all items with an inventory count lower than five.
     connection.query("SELECT * FROM products WHERE stock_quanity < 5", function (err, results) {
         if (err) throw err;
         console.table(results);
@@ -73,8 +73,9 @@ function viewLowInventory() {
 }
 
 function addInventory() {
-    //   * If a manager selects `Add to Inventory`, your app should display a prompt that will let the manager "add more" of any item currently in the store.
+    //   * If a manager selects `Add to Inventory`, addInventory function displays a prompt that will let the manager "add more" of any item currently in the store.
     connection.query("SELECT * FROM products", function (err, results) {
+        if (err) throw err;
         let product = results.map(result => {
             return result.product_name
         });
@@ -110,8 +111,8 @@ function addInventory() {
                 // console.log(answer.item, answer.quantity);
                 // console.log(typeof answer.quantity);
                 let foundItem = results.find(item => item.product_name === answer.item)
-                console.log(foundItem.stock_quanity)
-                console.log(typeof foundItem.stock_quanity);
+                // console.log(foundItem.stock_quanity)
+                // console.log(typeof foundItem.stock_quanity);
 
 
                 let quantity = parseInt(answer.quantity);
@@ -128,7 +129,7 @@ function addInventory() {
                     ],
                     function (err) {
                         if (err) throw err
-                        console.log(`${answer.item} updated successfully.`);
+                        console.log(`updated quantity for ${answer.item}  successfully.`);
                         start()
                         // re-prompt the user for the menu at the start
                     }
@@ -141,7 +142,7 @@ function addInventory() {
 }
 
 function addProduct() {
-    //   * If a manager selects `Add New Product`, it should allow the manager to add a completely new product to the store.
+    //   * If a manager selects `Add New Product`, addProduct function allows the manager to add a completely new product to the store.
     inquirer
         .prompt([{
                 name: "product_name",
