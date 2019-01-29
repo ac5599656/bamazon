@@ -1,3 +1,4 @@
+//This homework is linked to my portfolio. https://ac5599656.github.io/Bootstrap-Portfolio/portfolio.html
 const mysql = require("mysql");
 const inquirer = require("inquirer");
 
@@ -14,7 +15,7 @@ const connection = mysql.createConnection({
 });
 
 // connect to the mysql server and sql database
-connection.connect(function(err) {
+connection.connect(function (err) {
   if (err) throw err;
   // run the start function after the connection is made to prompt the user
   start();
@@ -28,15 +29,14 @@ function checkQuanity(onHand, orderAmount, chosenId, price) {
     connection.query(
       "UPDATE products SET ? WHERE ?",
 
-      [
-        {
+      [{
           stock_quanity: updateQuantity
         },
         {
           item_id: parseInt(chosenId)
         }
       ],
-      function(err) {
+      function (err) {
         if (err) throw err;
         console.log("--------------------------------------");
         console.log("Order placed successfully!");
@@ -57,16 +57,14 @@ function checkQuanity(onHand, orderAmount, chosenId, price) {
 
 //Prompt users for the id and quantity of the product.
 function start() {
-  connection.query("SELECT * FROM products", function(err, results) {
+  connection.query("SELECT * FROM products", function (err, results) {
     if (err) throw err;
     inquirer
-      .prompt([
-        {
+      .prompt([{
           name: "id",
           type: "input",
-          message:
-            "Please provide the id of the product that you like to purchase.",
-          validate: function(value) {
+          message: "Please provide the id of the product that you like to purchase.",
+          validate: function (value) {
             if (
               isNaN(value) === false &&
               parseInt(value) <= results.length &&
@@ -83,7 +81,7 @@ function start() {
           name: "quanity",
           type: "input",
           message: "The quanity for this product",
-          validate: function(value) {
+          validate: function (value) {
             if (isNaN(value) === false && parseInt(value) > 0) {
               return true;
             } else {
